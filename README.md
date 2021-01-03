@@ -52,3 +52,35 @@ module.exports = {
   plugins: [],
 };
 ```
+
+## Extracting Reusable Components
+
+`vue create reusable-components`
+`yarn add postcss autoprefixer tailwindcss`
+
+Create a new file `postcss.config.js` in the project root and add the following
+
+```
+module.exports = {
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ]
+}
+```
+
+Create `tailwind.css` file in the `src/assets` dir and add the following.
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Tailwind configuration
+
+`npx tailwind init`
+
+`Error: PostCSS plugin tailwindcss requires PostCSS 8.`
+
+Follow [instructions](https://tailwindcss.com/docs/installation#post-css-7-compatibility-build) to remove the error.
