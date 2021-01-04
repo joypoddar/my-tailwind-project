@@ -16,7 +16,7 @@
         <svg
           v-for="i in 5"
           :key="i"
-          :class="i <= property.rating ? 'text-teal-500' : 'text-gray-400'"
+          :class="i <= property.rating ? 'text-blue-500' : 'text-gray-400'"
           class="h-4 w-4 fill-current"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
