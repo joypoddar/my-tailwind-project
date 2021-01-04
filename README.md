@@ -91,4 +91,28 @@ Generating Tailwind default config file.
 
 `npx tailwind init tailwind-full.config.js --full`
 
-We take the approach of generating a minimal config file and working with it. Here we use the already generated `tailwind.config.js`. We use the extend section of the theme to add whatever new items that we need. 
+We take the approach of generating a minimal config file and working with it. Here we use the already generated `tailwind.config.js`. We use the extend section of the theme to add whatever new items that we need.
+
+## Optimizing for Production with Purgecss
+
+`npm i -D @fullhuman/postcss-purgecss postcss`
+
+Modify postcss.config.js
+
+```
+module.exports = {
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    process.env.NODE_ENV === "production" &&
+      require("@fullhuman/postcss-purgecss")({
+        content: [
+          "./src/**/*.vue", // .vue files
+          "./public/index.html", //.html files
+        ],
+        defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:]+/g) || [],
+      }),
+  ],
+};
+
+```
