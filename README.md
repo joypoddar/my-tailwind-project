@@ -84,3 +84,11 @@ Tailwind configuration
 `Error: PostCSS plugin tailwindcss requires PostCSS 8.`
 
 Follow [instructions](https://tailwindcss.com/docs/installation#post-css-7-compatibility-build) to remove the error.
+
+## Customizing Your Design System
+
+Generating Tailwind default config file.
+
+`npx tailwind init tailwind-full.config.js --full`
+
+We take the approach of generating a minimal config file and working with it. Here we use the already generated `tailwind.config.js`. We use the extend section of the theme to add whatever new items that we need. 
