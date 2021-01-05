@@ -6,7 +6,6 @@
       <div>
         <img class="h-8" src="/img/logo-inverted.svg" alt="Workcation" />
       </div>
-      <!-- Hamburger menu -->
       <div class="sm:hidden">
         <button
           @click="isOpen = !isOpen"
@@ -27,9 +26,8 @@
           </svg>
         </button>
       </div>
-      <!-- / hamburger menu -->
     </div>
-    <div
+    <nav
       :class="isOpen ? 'block' : 'hidden'"
       class="px-2 pt-2 pb-4 sm:flex sm:p-0"
     >
@@ -49,13 +47,12 @@
         >Messages</a
       >
       <AccountDropdown class="ml-6" />
-    </div>
+    </nav>
   </header>
 </template>
 
 <script>
 import AccountDropdown from "./AccountDropdown";
-
 export default {
   components: {
     AccountDropdown,
