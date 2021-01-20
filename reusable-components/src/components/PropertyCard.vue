@@ -2,37 +2,37 @@
   <div>
     <div class="relative pb-5/6">
       <img
-        class="absolute h-full w-full object-cover rounded-lg shadow-md"
+        class="absolute object-cover w-full h-full rounded-lg shadow-md"
         :src="property.imageUrl"
         :alt="property.imageAlt"
       />
     </div>
-    <div class="relative -mt-16 px-4">
-      <div class="bg-white p-6 rounded-lg shadow-lg">
+    <div class="relative px-4 -mt-16">
+      <div class="p-6 bg-white rounded-lg shadow-lg">
         <div class="flex items-baseline">
           <span
-            class="inline-block bg-blue-200 text-blue-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide"
+            class="inline-block px-2 text-xs font-semibold tracking-wide text-blue-800 uppercase bg-blue-200 rounded-full"
             >New</span
           >
           <div
-            class="ml-2 text-gray-600 text-xs uppercase font-semibold tracking-wide"
+            class="ml-2 text-xs font-semibold tracking-wide text-gray-600 uppercase"
           >
             {{ property.beds }} beds &bull; {{ property.baths }} baths
           </div>
         </div>
-        <h4 class="mt-1 font-semibold text-lg leading-tight truncate">
+        <h4 class="mt-1 text-lg font-semibold leading-tight truncate">
           {{ property.title }}
         </h4>
         <div class="mt-1">
           {{ property.formattedPrice }}
-          <span class="text-gray-600 text-sm"> / wk</span>
+          <span class="text-sm text-gray-600"> / wk</span>
         </div>
-        <div class="mt-2 flex items-center">
+        <div class="flex items-center mt-2">
           <svg
             v-for="i in 5"
             :key="i"
             :class="i <= property.rating ? 'text-blue-500' : 'text-gray-400'"
-            class="h-4 w-4 fill-current"
+            class="w-4 h-4 fill-current"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -41,7 +41,7 @@
               fill-rule="evenodd"
             />
           </svg>
-          <span class="ml-2 text-gray-600 text-sm"
+          <span class="ml-2 text-sm text-gray-600"
             >{{ property.reviewCount }} reviews</span
           >
         </div>
